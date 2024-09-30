@@ -11,6 +11,7 @@ use Spatie\Permission\Models\Permission;
 use Illuminate\Support\Str;
 use App\Models\Persona;
 use App\Models\Historial;
+USE App\Models\Actividad;
 
 class ApiController extends Controller
 {
@@ -215,6 +216,32 @@ class ApiController extends Controller
             "status" => 200,
             "ms" => "Exitoso",
             "data" => $msc
+        ]);
+    }
+
+    public function actividad(Request $request)
+    {
+        $user = $request->user();
+        $nombreyapellido = $request->nombreyapellido;
+        $cedula = $request->cedula;
+        $code = $request->codigo;   
+        $costo = $request->costo;        
+
+
+        $actividad = Actividad::create([ 
+            'user_id' => $user->id,
+            'nombreLaboratorio' => $user->name,
+            'nombreyapellido' => $nombreyapellido,
+            'cedula' => $cedula,
+            'codigo' => $code,
+            'costo' => $costo,         
+        ]);
+
+        
+        return response([
+            "status" => 200,
+            "ms" => "Exitoso",
+            "data" => $actividad
         ]);
     }
 

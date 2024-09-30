@@ -600,6 +600,7 @@ class ComposerStaticInitd0fe43646bd06a5303c566d1b524242d
         'App\\Listeners\\RegisteredEvent' => __DIR__ . '/../..' . '/app/Listeners/RegisteredEvent.php',
         'App\\Mail\\mailRegistroLaboratorio' => __DIR__ . '/../..' . '/app/Mail/mailRegistroLaboratorio.php',
         'App\\Mail\\notificacion' => __DIR__ . '/../..' . '/app/Mail/notificacion.php',
+        'App\\Models\\Actividad' => __DIR__ . '/../..' . '/app/Models/Actividad.php',
         'App\\Models\\Configuracion' => __DIR__ . '/../..' . '/app/Models/Configuracion.php',
         'App\\Models\\Contacto' => __DIR__ . '/../..' . '/app/Models/Contacto.php',
         'App\\Models\\Historial' => __DIR__ . '/../..' . '/app/Models/Historial.php',

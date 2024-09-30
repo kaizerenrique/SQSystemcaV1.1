@@ -41,3 +41,5 @@ Route::post('documento',[ApiController::class,'doc'])->middleware('auth:sanctum'
 Route::get('/codigonuevo',[ApiController::class,'generarCodigoNuevo'])->middleware('auth:sanctum');
 
 Route::get('/tokenmenorsincedula',[ApiController::class,'generarTokenMenorSinCedula'])->middleware('auth:sanctum');
+
+Route::post('/actividad',[ApiController::class,'actividad'])->middleware('auth:sanctum');

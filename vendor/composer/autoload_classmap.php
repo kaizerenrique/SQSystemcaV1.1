@@ -35,6 +35,7 @@ return array(
     'App\\Listeners\\RegisteredEvent' => $baseDir . '/app/Listeners/RegisteredEvent.php',
     'App\\Mail\\mailRegistroLaboratorio' => $baseDir . '/app/Mail/mailRegistroLaboratorio.php',
     'App\\Mail\\notificacion' => $baseDir . '/app/Mail/notificacion.php',
+    'App\\Models\\Actividad' => $baseDir . '/app/Models/Actividad.php',
     'App\\Models\\Configuracion' => $baseDir . '/app/Models/Configuracion.php',
     'App\\Models\\Contacto' => $baseDir . '/app/Models/Contacto.php',
     'App\\Models\\Historial' => $baseDir . '/app/Models/Historial.php',
