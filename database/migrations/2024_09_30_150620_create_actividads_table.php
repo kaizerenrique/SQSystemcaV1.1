@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('actividads', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->index();// id de laboratorio
+            $table->foreignId('user_id') // UNSIGNED BIG INT
+                    ->nullable() // <-- IMPORTANTE: LA COLUMNA DEBE ACEPTAR NULL COMO VALOR VALIDO
+                    ->constrained()  // <-- DEFINE LA RESTRICCION DE LLAVE FORANEA
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
+
             $table->string('nombreLaboratorio',250);//laboratorio
             $table->string('nombreyapellido',200);// nombre y apellido del pasiente
             $table->string('cedula',12)->nullable();

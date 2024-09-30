@@ -61,8 +61,12 @@
                             <x-jet-button class="bg-blue-500 hover:bg-blue-700" wire:click="confirmPersonaEditar({{$usuario->id}})" >
                                 {{ __('Editar') }}
                             </x-jet-button>  
-                        -->                           
+                        -->    
+                            <x-jet-button class="bg-red-500 hover:bg-red-700" wire:click="consulta_borrar({{$usuario->id}})">
+                                {{ __('Eliminar') }}
+                            </x-jet-button>                        
                         </td>
+                        
                     </tr>
                 @endforeach
             </tbody>
@@ -205,4 +209,41 @@
         </x-slot>
     </x-jet-dialog-modal>
 <!-- Fin del Modal para Laboratorio Registrado Correctamente  -->
+
+    <!-- Inicio del Modal para Alerta Eliminar Documento -->
+    <x-jet-dialog-modal wire:model="elimirModal">
+        <x-slot name="title">
+            {{$titulo}}
+        </x-slot>
+
+        <x-slot name="content">
+            {{$resultado}}             
+        </x-slot>
+
+        <x-slot name="footer">
+            <x-jet-secondary-button wire:click="$toggle('elimirModal', false)" wire:loading.attr="disabled">
+                {{ __('Cancelar') }}
+            </x-jet-secondary-button>
+            <x-jet-danger-button class="ml-3" wire:click="BorrarUser({{$iduser}})" wire:loading.attr="disabled">
+                {{ __('Eliminar') }}
+            </x-jet-danger-button>
+        </x-slot>
+    </x-jet-dialog-modal>
+
+    <!-- Inicio del Modal para mostrar el codigo -->
+    <x-jet-dialog-modal wire:model="eliminado">
+        <x-slot name="title">
+            {{ __($titulo) }}
+        </x-slot>
+
+        <x-slot name="content">
+            {{$resultado}}
+        </x-slot>
+
+        <x-slot name="footer">
+            <x-jet-secondary-button wire:click="$toggle('eliminado', false)" wire:loading.attr="disabled">
+                {{ __('Aceptar') }}
+            </x-jet-secondary-button>
+        </x-slot>
+    </x-jet-dialog-modal>
 </div>

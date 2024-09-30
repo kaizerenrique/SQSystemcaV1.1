@@ -28,6 +28,12 @@ class Usuarios extends Component
     public $name;
     public $email;
 
+    public $elimirModal = false;
+    public $eliminado = false;
+    public $iduser;
+    public $titulo;
+    public $resultado;
+
     protected $queryString = [
         'buscar' => ['except' => '']
     ];
@@ -126,5 +132,27 @@ class Usuarios extends Component
         $this->token = $token;
         $this->mostrarTokenApi = true;
         
+    }
+
+    public function consulta_borrar($id)
+    {
+        $usuario = User::find($id);
+        $this->titulo = 'Alerta !!';
+        $this->resultado = 'Esta seguro de querer eliminar el Usuario '. $usuario->name . ' una vez eliminado no podrá ser recuperado';
+        $this->iduser = $usuario->id;
+        $this->elimirModal = true;
+    }
+
+    public function BorrarUser($idorden)
+    {
+        $this->elimirModal = false;
+
+        $this->titulo = 'Borrado';
+        $this->resultado = 'El Usuario se ha borrado exitosamente.';
+        
+        $resul = User::find($idorden);
+        $resul->delete();
+        $resul->tokens()->delete();
+        $this->eliminado = true;
     }
 }
