@@ -15,6 +15,7 @@ class Actividad extends Model
         'nombreyapellido',
         'cedula',
         'codigo',
+        'orden',
         'costo',
     ];
 }

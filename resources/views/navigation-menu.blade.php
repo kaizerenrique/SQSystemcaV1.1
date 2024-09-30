@@ -36,6 +36,11 @@
                             {{ __('Estadísticas') }}
                         </x-jet-nav-link>
                     </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-jet-nav-link href="{{ route('actividades') }}" :active="request()->routeIs('actividades')">
+                            {{ __('Actividades') }}
+                        </x-jet-nav-link>
+                    </div>
                 @endif
                 @if(auth()->user()->can('menuConfiguracion'))
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -190,6 +195,11 @@
             <div class="pt-2 pb-3 space-y-1">
                 <x-jet-responsive-nav-link href="{{ route('estadistica') }}" :active="request()->routeIs('estadistica')">
                     {{ __('Estadísticas') }}
+                </x-jet-responsive-nav-link>
+            </div>
+            <div class="pt-2 pb-3 space-y-1">
+                <x-jet-responsive-nav-link href="{{ route('actividades') }}" :active="request()->routeIs('actividades')">
+                    {{ __('Actividades') }}
                 </x-jet-responsive-nav-link>
             </div>
         @endif

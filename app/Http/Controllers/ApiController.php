@@ -224,7 +224,8 @@ class ApiController extends Controller
         $user = $request->user();
         $nombreyapellido = $request->nombreyapellido;
         $cedula = $request->cedula;
-        $code = $request->codigo;   
+        $code = $request->codigo;  
+        $orden = $request->orden;  
         $costo = $request->costo;        
 
 
@@ -234,6 +235,7 @@ class ApiController extends Controller
             'nombreyapellido' => $nombreyapellido,
             'cedula' => $cedula,
             'codigo' => $code,
+            'orden' => $orden,
             'costo' => $costo,         
         ]);
 

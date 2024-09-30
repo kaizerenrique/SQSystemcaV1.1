@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('nombreyapellido',200);// nombre y apellido del pasiente
             $table->string('cedula',12)->nullable();
             $table->string('codigo',8);//codigo del usuario
+            $table->string('orden',30)->nullable();
             $table->float('costo', 10, 2);            
             $table->timestamps();
         });

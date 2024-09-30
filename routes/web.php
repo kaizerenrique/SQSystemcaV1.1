@@ -42,6 +42,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/estadistica', function ()
     return view('estadistica');
 })->name('estadistica');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/actividades', function () {
+    return view('actividades');
+})->name('actividades');
+
 Route::get('/documentos/{url_code}', [DocumentosController::class, 'show']);
 
 Route::get('/consulta', [ConsultaController::class, 'index'])->name('consulta');
