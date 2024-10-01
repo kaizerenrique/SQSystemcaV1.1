@@ -1,4 +1,15 @@
 <div class="p-2 sm:px-20 bg-white border-b border-gray-200">
+    <div class="mt-4 text-2xl">
+        <div class="mt-4 mb-4 text-2xl flex justify-between">
+            
+            <div class="mr-2">
+                <x-jet-input id="fecha" type="date" class="mt-1 block w-full"
+                        wire:model="fecha" />
+                <x-jet-input-error for="fecha" class="mt-2" />
+            </div>
+        </div>        
+    </div>
+    
     <div class="mt-3">  
         <table class="table-auto w-full mt-6">
             <thead>

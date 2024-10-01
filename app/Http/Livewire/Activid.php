@@ -8,6 +8,7 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use App\Models\User;
 use App\Models\Actividad;
+use Carbon\Carbon;
 
 class Activid extends Component
 {
@@ -19,9 +20,22 @@ class Activid extends Component
     public $titulo;
     public $resultado;
 
+    public $fecha;
+
+
     public function render()
     {
+
+        if (empty($this->fecha)) {
+            $date = Carbon::now();
+            $fecha = $date->format('Y-m-d');
+            $this->fecha = $fecha;
+        }else {
+            $fecha = $this->fecha;
+        }
+        
         $actis = Actividad::where('user_id', auth()->user()->id)
+            ->whereDate('created_at', $fecha)
             ->orderBy('id','desc')
             ->paginate(12);       
 
