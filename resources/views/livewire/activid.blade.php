@@ -10,7 +10,7 @@
         </div>        
     </div>
     
-    <div class="mt-3">  
+    <div class="mt-3 overflow-x-auto">  
         <table class="table-auto w-full mt-6">
             <thead>
                 <tr class="bg-indigo-500 text-white">
